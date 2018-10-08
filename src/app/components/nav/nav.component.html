@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" *ngIf="isUserLOggedIn">
+  <a class="navbar-brand" href="#">GESTIOSOFT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation"
+          open="true"  open="true" (click)="toggleSidebar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown" ngbDropdown>
+                <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+                    <i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;{{username}}&nbsp;&nbsp;&nbsp;<b class="caret"></b>
+                </a>
+                <div class="dropdown-menu-left" ngbDropdownMenu>
+                    <a class="dropdown-item" [routerLink]="['#']">
+                        <i class="fa fa-address-book"></i> Profile
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/login']" (click)="logout($event)">
+                        <i class="fa fa-fw fa-power-off"></i> Log Out
+                    </a>
+                </div>
+            </li>
+        </ul>
+  </div>
+</nav>
